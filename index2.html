@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mahmut Sözen - CV</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #111;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: background-color 0.6s ease;
+    }
+
+    /* --- Lamba --- */
+    .lamp {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 50px;
+      cursor: pointer;
+      z-index: 999;
+      transition: filter 0.3s ease;
+    }
+
+    .lamp.on {
+      filter: drop-shadow(0 0 10px yellow);
+    }
+
+    /* --- İçerik --- */
+    .content {
+      max-width: 700px;
+      padding: 20px;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+    }
+
+    body.light .content {
+      opacity: 1;
+      color: #000;
+    }
+
+    body.light {
+      background-color: #f2f2f2;
+    }
+
+    /* --- Yarasalar --- */
+    .bat {
+      width: 1px;
+      height: 1px;
+      position: absolute;
+      background: url('https://i.ibb.co/rw8QfP7/bat-sprite.png');
+      transform: scale(3);
+      animation: flap 0.4s steps(6) infinite, fly 6s linear infinite;
+      z-index: 10;
+    }
+
+    @keyframes flap {
+      to { background-position: -192px 0; }
+    }
+
+    @keyframes fly {
+      from { transform: translateX(-10vw) translateY(10vh) scale(3); }
+      to { transform: translateX(110vw) translateY(-10vh) scale(3); }
+    }
+
+    body.light .bat {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Lamba -->
+  <img src="https://i.ibb.co/jzjF3Vk/lamp-off.png" class="lamp" id="lamp" alt="Lamba">
+
+  <!-- İçerik -->
+  <div class="content">
+    <header>
+      <h1>Mahmut Sözen</h1>
+      <p>Fen Bilimleri Öğretmeni & CAD-CAM Operatörü</p>
+      <p>İletişim: mahmut.szn35@gmail.com</p>
+    </header>
+
+    <section>
+      <h2>Profil Özeti</h2>
+      <p>Bilgisayarlarla aram oldukça iyi; genel ofis ve diş alanında CAD-CAM programlarını rahatlıkla kullanabiliyorum. Öğrenme konusunda hırslıyım ve yeni bir programı hızlıca kapabilirim.</p>
+    </section>
+
+    <section>
+      <h2>Eğitim</h2>
+      <ul>
+        <li>Torbali Anadolu Lisesi (2012 - 2016)</li>
+        <li>Akdeniz Üniversitesi - Fen Bilimleri Öğretmenliği (2016 - 2020)</li>
+        <li>Anadolu Üniversitesi - Web Tasarım ve Kodlama (2020 - Halen)</li>
+      </ul>
+    </section>
+  </div>
+
+  <!-- JS -->
+  <script>
+    const lamp = document.getElementById('lamp');
+    let isOn = false;
+
+    // Yarasaları oluştur
+    for (let i = 0; i < 6; i++) {
+      const bat = document.createElement('div');
+      bat.classList.add('bat');
+      bat.style.top = Math.random() * 90 + 'vh';
+      bat.style.left = Math.random() * 90 + 'vw';
+      bat.style.animationDelay = (Math.random() * 5) + 's';
+      document.body.appendChild(bat);
+    }
+
+    // Lamba toggle
+    lamp.addEventListener('click', () => {
+      isOn = !isOn;
+      document.body.classList.toggle('light', isOn);
+      lamp.src = isOn
+        ? "https://i.ibb.co/znDyTnH/lamp-on.png"
+        : "https://i.ibb.co/jzjF3Vk/lamp-off.png";
+    });
+  </script>
+</body>
+</html>

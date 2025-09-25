@@ -1,99 +1,38 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahmut Sözen - Etkileşimli CV</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mahmut Sözen – İnteraktif CV</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    
-    <div id="bat-container">
-        <div class="bat"></div>
-        <div class="bat"></div>
-        <div class="bat"></div>
-        <div class="bat"></div>
-        <div class="bat"></div>
-        <div class="bat"></div>
-    </div>
+  <!-- İnteraktif lamba -->
+  <div id="lamp">
+    <div class="cord"></div>
+    <div class="bulb"></div>
+  </div>
 
-    <div id="lamp-container">
-        <object id="lamp-svg-object" type="image/svg+xml" data="lamp.svg">
-            Lamba yüklenemedi.
-        </object>
-    </div>
+  <!-- Animasyonlu Logo -->
+  <header class="logo">MS</header>
 
-    <div id="cv-content">
-        <header>
-            <div class="logo">
-                <svg id="animated-logo" viewBox="0 0 100 40">
-                    <defs>
-                        <linearGradient id="glow" x1="0" y1="0" x2="100%" y2="100%">
-                            <stop stop-color="#4CAF50" offset="0%"/>
-                            <stop stop-color="#ffffff" offset="50%"/>
-                            <stop stop-color="#4CAF50" offset="100%"/>
-                        </linearGradient>
-                    </defs>
-                    <text class="logo-text" x="50%" y="50%" dy=".35em" text-anchor="middle">MS</text>
-                </svg>
-            </div>
-            <h1>Mahmut Sözen</h1>
-            <p>Fen Bilimleri Öğretmeni & CAD-CAM Operatörü</p>
-            <p>İletişim: mahmut.szn35@gmail.com | 05**********</p>
-        </header>
-        
-        <section id="profile">
-            <h2>Profil Özeti</h2>
-            <p>Bilgisayarlarla aram oldukça iyi; genel ofis ve diş alanında CAD-CAM programlarını rahatlıkla kullanabiliyorum. Öğrenme konusunda hırslıyım ve yeni bir programı hızlıca kapabilirim. Teknolojiyi işime yansıtmayı, kendimi ve etrafımı geliştirmeyi öncelik olarak görüyorum.</p>
-        </section>
+  <!-- CV içeriği -->
+  <main id="cv" class="hidden">
+    <h1>Mahmut Sözen</h1>
+    <p>Diş Protez Cad-Cam Operatörü & Elyaf Kardeci</p>
+    <p>Bilgisayar konusunda yetkin, araştırmayı seven ve öğrenmeye açık.</p>
+    <!-- CV detaylarını buraya ekle -->
+  </main>
 
-        <section id="education">
-            <h2>Eğitim</h2>
-            <ul>
-                <li><strong>Torbali Anadolu Lisesi</strong> (2012 - 2016)</li>
-                <li><strong>Akdeniz Üniversitesi - Fen Bilimleri Öğretmenliği</strong> (2016 - 2020)</li>
-                <li><strong>Anadolu Üniversitesi - Web Tasarım ve Kodlama</strong> (2020 - Halen)</li>
-            </ul>
-        </section>
+  <!-- Yarasalar -->
+  <div id="bats-container">
+    <!-- Birkaç örnek yarasa elemanı -->
+    <div class="bat"></div>
+    <div class="bat"></div>
+    <div class="bat"></div>
+    <div class="bat"></div>
+  </div>
 
-        <section id="experience">
-            <h2>İş Deneyimi</h2>
-            <ul>
-                <li><strong>Bimer Elyaf Anonim Şirketi</strong> (2018 - Yaz): Elyaf Kardeci</li>
-                <li><strong>Antalya Sefa Akın Ortaokulu</strong> (2019 - 2020): Fen Bilimleri Öğretmeni/Stajyer</li>
-                <li><strong>Eliz Dent Diş Protez Laboratuvarı</strong> (2021 - Halen): Diş Protez CAD-CAM Operatörü</li>
-            </ul>
-        </section>
-
-        <section id="skills">
-            <h2>Özellikler</h2>
-            <ul>
-                <li>İletişim Odaklı</li>
-                <li>Hızlı Öğrenme</li>
-                <li>Araştırmacı</li>
-                <li>FeTeMM</li>
-                <li>Temel İngilizce (A2)</li>
-            </ul>
-        </section>
-
-        <section id="certificates">
-            <h2>Sertifikalar</h2>
-            <ul>
-                <li>Etkili Sunum Teknikleri</li>
-                <li>Temel Ofis Sertifikası</li>
-                <li>Temel İngilizce Sertifikası</li>
-            </ul>
-        </section>
-
-        <footer>
-            <p>&copy; 2024 Mahmut Sözen | <a href="https://teknoist.github.io/CV" target="_blank">Github CV</a></p>
-        </footer>
-    </div>
-
-    <script src='https://unpkg.com/gsap@3/dist/gsap.min.js'></script>
-    <script src='https://unpkg.com/gsap@3/dist/Draggable.min.js'></script>
-    <script src='https://assets.codepen.io/16327/MorphSVGPlugin3.min.js'></script>
-    
-    <script src="./script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

@@ -3,112 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahmut Sözen - Karanlık CV</title>
+    <title>Mahmut Sözen - Etkileşimli CV</title>
     <link rel="stylesheet" href="style.css">
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/MorphSVGPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
 </head>
 <body>
-
-    <div id="bat-overlay">
-        <div id="bat-container">
-            <div class="bat bat-1" style="--x: 15%; --y: 10%;"></div>
-            <div class="bat bat-2" style="--x: 70%; --y: 30%; --scale: 3; --speed: 0.6s;"></div>
-            <div class="bat bat-3" style="--x: 40%; --y: 60%; --scale: 5; --speed: 0.5s;"></div>
-            <div class="bat bat-4" style="--x: 5%; --y: 85%; --scale: 2; --speed: 0.8s;"></div>
-            <div class="bat bat-5" style="--x: 85%; --y: 50%; --scale: 4; --speed: 0.4s;"></div>
-            <div class="bat bat-6" style="--x: 20%; --y: 50%; --scale: 3; --speed: 0.5s;"></div>
-        </div>
+    
+    <div id="bat-container">
+        <div class="bat"></div>
+        <div class="bat"></div>
+        <div class="bat"></div>
+        <div class="bat"></div>
+        <div class="bat"></div>
+        <div class="bat"></div>
     </div>
 
+    <div id="lamp-container">
+        <object id="lamp-svg-object" type="image/svg+xml" data="lamp.svg">
+            Lamba yüklenemedi.
+        </object>
+    </div>
 
-    <svg class="lamp" viewBox="0 0 333 484" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <radialGradient id="opening-shade" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(165 220) scale(130 20)">
-            <stop stop-color="var(--opening)"/>
-            <stop offset="1" stop-color="var(--opening)" stop-opacity="0"/>
-          </radialGradient>
-          <linearGradient id="bulb-base-shading" x1="164.5" y1="230.5" x2="164.5" y2="280.5" gradientUnits="userSpaceOnUse">
-            <stop stop-color="var(--b-1)"/>
-            <stop offset=".2" stop-color="var(--b-2)"/>
-            <stop offset=".8" stop-color="var(--b-2)" stop-opacity="0"/>
-          </linearGradient>
-          <linearGradient id="side-shading" x1="119" y1="430" x2="245" y2="430" gradientUnits="userSpaceOnUse">
-            <stop stop-color="var(--b-3)"/>
-            <stop offset="1" stop-color="var(--b-4)" stop-opacity="0"/>
-          </linearGradient>
-          <linearGradient id="post-shading" x1="150" y1="288" x2="180" y2="288" gradientUnits="userSpaceOnUse">
-            <stop stop-color="var(--b-1)"/>
-            <stop offset="1" stop-color="var(--b-2)" stop-opacity="0"/>
-          </linearGradient>
-          <linearGradient id="light" x1="165.5" y1="218.5" x2="165.5" y2="483.5" gradientUnits="userSpaceOnUse">
-            <stop stop-color="var(--l-1)" stop-opacity=".2"/>
-            <stop offset="1" stop-color="var(--l-2)" stop-opacity="0"/>
-          </linearGradient>
-          <linearGradient id="top-shading" x1="56" y1="110" x2="295" y2="110" gradientUnits="userSpaceOnUse">
-            <stop stop-color="var(--t-1)"/>
-            <stop offset="1" stop-color="var(--t-2)" stop-opacity="0"/>
-          </linearGradient>
-          <linearGradient id="gradient-opening" x1="165" y1="220" x2="165" y2="240" gradientUnits="userSpaceOnUse">
-            <stop stop-color="var(--opening)"/>
-            <stop offset="1" stop-color="var(--opening)" stop-opacity="0"/>
-          </linearGradient>
-        </defs>
-        <rect class="light" x="50" y="210" width="231" height="274" fill="url(#light)"/>
-        <g class="lamp__shade shade">
-          <path class="shade__top" d="M295 110.5C271.742 66.822 216.792 45 165 45S58.258 66.822 35 110.5h260Z" fill="var(--t-3)"/>
-          <path class="shade__top-shade" d="M295 110.5C271.742 66.822 216.792 45 165 45S58.258 66.822 35 110.5h260Z" fill="url(#top-shading)"/>
-          <path class="shade__side" d="M35 110.5C31.258 117.758 29 126.131 29 135c0 49.706 71.79 90 160 90s160-40.294 160-90c0-8.869-2.258-17.242-6-24.5H35Z" fill="var(--t-2)"/>
-          <path class="shade__side-shade" d="M35 110.5C31.258 117.758 29 126.131 29 135c0 49.706 71.79 90 160 90s160-40.294 160-90c0-8.869-2.258-17.242-6-24.5H35Z" fill="url(#side-shading)" style="mix-blend-mode: multiply;"/>
-          <path class="shade__feature" d="M165 141.5c-44.183 0-80-8.954-80-20s35.817-20 80-20 80 8.954 80 20-35.817 20-80 20Z" fill="var(--feature)"/>
-          <ellipse class="shade__opening" cx="165" cy="220" rx="130" ry="20" fill="var(--t-1)"/>
-          <ellipse class="shade__opening-shade" cx="165" cy="220" rx="130" ry="20" fill="url(#opening-shade)"/>
-          <ellipse class="shade__opening-light" cx="165" cy="220" rx="130" ry="20" fill="url(#gradient-opening)"/>
-        </g>
-        <g class="lamp__base base">
-          <path class="base__side" d="M165 464c44.183 0 80-8.954 80-20v-14h-22.869c-14.519-15.422-38.675-25-60.916-25-22.241 0-46.397 9.578-60.916 25H85v14c0 11.046 35.817 20 80 20Z" fill="var(--base-side)"/>
-          <path class="base__top" d="M165 429c-44.183 0-80-8.954-80-20s35.817-20 80-20 80 8.954 80 20-35.817 20-80 20Z" fill="var(--base-top)"/>
-          <path class="base__feature" d="M165 434c-44.183 0-80-8.954-80-20v-5c0 11.046 35.817 20 80 20s80-8.954 80-20v5c0 11.046-35.817 20-80 20Z" fill="var(--feature)"/>
-        </g>
-        <g class="lamp__post post">
-          <path class="post__side" d="M150 288v-48h30v48h-30Z" fill="var(--post)"/>
-          <path class="post__side-shade" d="M150 288v-48h30v48h-30Z" fill="url(#post-shading)" style="mix-blend-mode: multiply;"/>
-          <path class="post__top" d="M165 240c-8.284 0-15-3.582-15-8s6.716-8 15-8 15 3.582 15 8-6.716 8-15 8Z" fill="var(--base-top)"/>
-          <path class="post__feature" d="M165 242c-8.284 0-15-3.582-15-8v-2c0 4.418 6.716 8 15 8s15-3.582 15-8v2c0 4.418-6.716 8-15 8Z" fill="var(--feature)"/>
-        </g>
-        <g class="lamp__bulb bulb">
-          <path class="bulb__glass" d="M165 285c-15.464 0-28-11.193-28-25 0-8.082 3.655-15.356 9.471-20.244L148 244h34l1.529-4.244c5.816 4.888 9.471 12.162 9.471 20.244 0 13.807-12.536 25-28 25Z" fill="var(--b-1)"/>
-          <path class="bulb__base" d="M165 285c-6.627 0-12-5.373-12-12v-24h24v24c0 6.627-5.373 12-12 12Z" fill="var(--base-top)"/>
-          <path class="bulb__base-shade" d="M165 285c-6.627 0-12-5.373-12-12v-24h24v24c0 6.627-5.373 12-12 12Z" fill="url(#bulb-base-shading)" style="mix-blend-mode: multiply;"/>
-          <path class="bulb__glass-top" d="M165 242c-15.464 0-28-11.193-28-25 0-8.082 3.655-15.356 9.471-20.244L148 244h34l1.529-4.244c5.816 4.888 9.471 12.162 9.471 20.244 0 13.807-12.536 25-28 25Z" fill="var(--b-1)"/>
-          <g class="lamp__eye-wrapper">
-            <g class="lamp__eye">
-              <rect x="156.5" y="271.5" width="4" height="4" rx="2" fill="var(--feature)"/>
-              <rect x="172.5" y="271.5" width="4" height="4" rx="2" fill="var(--feature)"/>
-            </g>
-          </g>
-        </g>
-        <path class="cord" d="M165 45c0-10 10-10 10-20s-10-10-10-20" stroke="var(--cord)" stroke-width="4" stroke-linecap="round" fill="none"/>
-        <g class="cords">
-          <path d="M165 45c0-10 10-10 10-20s-10-10-10-20" stroke="var(--cord)" stroke-width="4" stroke-linecap="round" fill="none"/>
-          <path d="M165 45c0-10 10-15 10-30s-10-15-10-30" stroke="var(--cord)" stroke-width="4" stroke-linecap="round" fill="none"/>
-          <path d="M165 45c0-10 10-20 10-40s-10-20-10-40" stroke="var(--cord)" stroke-width="4" stroke-linecap="round" fill="none"/>
-          <path d="M165 45c0-10 10-25 10-50s-10-25-10-50" stroke="var(--cord)" stroke-width="4" stroke-linecap="round" fill="none"/>
-          <path d="M165 45c0-10 10-30 10-60s-10-30-10-60" stroke="var(--cord)" stroke-width="4" stroke-linecap="round" fill="none"/>
-          <path d="M165 45c0-10 10-35 10-70s-10-35-10-70" stroke="var(--cord)" stroke-width="4" stroke-linecap="round" fill="none"/>
-          <path d="M165 45c0-10 10-40 10-80s-10-40-10-80" stroke="var(--cord)" stroke-width="4" stroke-linecap="round" fill="none"/>
-          <path d="M165 45c0-10 10-45 10-90s-10-45-10-90" stroke="var(--cord)" stroke-width="4" stroke-linecap="round" fill="none"/>
-          <path d="M165 45c0-10 10-50 10-100s-10-50-10-100" stroke="var(--cord)" stroke-width="4" stroke-linecap="round" fill="none"/>
-        </g>
-        <line class="cord--dummy" x1="165" y1="45" x2="165" y2="45" stroke="var(--cord)" stroke-width="4" stroke-linecap="round" fill="none"/>
-        <rect class="lamp__hit" x="155" y="-120" width="20" height="150" opacity="0"/>
-    </svg>
-    
-
-    <div id="content-wrapper">
+    <div id="cv-content">
         <header>
+            <div class="logo">
+                <svg id="animated-logo" viewBox="0 0 100 40">
+                    <defs>
+                        <linearGradient id="glow" x1="0" y1="0" x2="100%" y2="100%">
+                            <stop stop-color="#4CAF50" offset="0%"/>
+                            <stop stop-color="#ffffff" offset="50%"/>
+                            <stop stop-color="#4CAF50" offset="100%"/>
+                        </linearGradient>
+                    </defs>
+                    <text class="logo-text" x="50%" y="50%" dy=".35em" text-anchor="middle">MS</text>
+                </svg>
+            </div>
             <h1>Mahmut Sözen</h1>
             <p>Fen Bilimleri Öğretmeni & CAD-CAM Operatörü</p>
             <p>İletişim: mahmut.szn35@gmail.com | 05**********</p>
@@ -153,16 +81,19 @@
             <ul>
                 <li>Etkili Sunum Teknikleri</li>
                 <li>Temel Ofis Sertifikası</li>
-                <li>İş Güvenliği</li>
+                <li>Temel İngilizce Sertifikası</li>
             </ul>
         </section>
 
-        <section id="social">
-            <h2>Sosyal Medya</h2>
-            <p><a href="https://www.linkedin.com/in/mahmut-sözen-309628203/" target="_blank">LinkedIn Profilim</a></p>
-        </section>
+        <footer>
+            <p>&copy; 2024 Mahmut Sözen | <a href="https://teknoist.github.io/CV" target="_blank">Github CV</a></p>
+        </footer>
     </div>
 
-    <script src="script.js"></script>
+    <script src='https://unpkg.com/gsap@3/dist/gsap.min.js'></script>
+    <script src='https://unpkg.com/gsap@3/dist/Draggable.min.js'></script>
+    <script src='https://assets.codepen.io/16327/MorphSVGPlugin3.min.js'></script>
+    
+    <script src="./script.js"></script>
 </body>
 </html>
